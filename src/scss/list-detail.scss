@@ -1,0 +1,86 @@
+.view-container {
+  background-color: #f4f5f9;
+  font-size: 32px;
+  font-weight: 500;
+  .view-item {
+    background-color: #ffffff;
+    box-sizing: border-box;
+    padding: 0 20px 20px;
+    margin-bottom: 20px;
+    position: relative;
+    .type-img {
+      width: 128px;
+      height: 106px;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      z-index: 1;
+    }
+    .view-title {
+      padding: 20px;
+      position: relative;
+      color: #007aff;
+      border-bottom: 2px solid #F2F1F1;
+    }
+    // 标题旁竖线
+    .view-title:after {
+      background: #007aff;
+      content: '';
+      width: 10px;
+      height: 40%;
+      position: absolute;
+      top: 26px;
+      left: 0px;
+    }
+
+    .view-list {
+      margin-bottom: 20px;
+      .list-item {
+        display: flex;
+        min-height: 44px;
+        line-height: 44px;
+        padding: 15px 0;
+        .item-title {
+          min-width: 25%;
+          max-width: 50%;
+          color: #999;
+          text-align: left;
+        }
+        // 标题冒号
+        .item-title:after {
+          content: ':';
+        }
+        .item-content {
+          flex: 1;
+          text-align: right;
+          color: #333;
+          .image {
+            width: 100px;
+            height: 100px;
+            border: 2px solid #eee;
+          }
+        }
+        .item-photo{
+          flex: 1;
+          text-align: right;
+          color: #333;
+          .image {
+            width: 100px;
+            height: 100px;
+            border: 2px solid #eee;
+            float: right;
+          }
+        }
+      }
+    }
+  }
+  .view-item:last-of-type {
+    margin-bottom: unset;
+  }
+  .uni-btn-v {
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+}

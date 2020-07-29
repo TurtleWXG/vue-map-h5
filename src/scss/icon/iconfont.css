@@ -1,0 +1,33 @@
+@font-face {font-family: "iconfont";
+  src: url('https://at.alicdn.com/t/font_1801862_flkfq07f4uk.eot?t=1589961379228'); /* IE9 */
+  src: url('https://at.alicdn.com/t/font_1801862_flkfq07f4uk.eot?t=1589961379228#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAANQAAsAAAAAB7gAAAMCAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDKgqCQIIHATYCJAMUCwwABCAFhG0HZRuoBsgekiSCSkRRGA9VDAEU4uG//Wj3zcz/q9J2k2gSN0ISDQUSlQSNCsk6kUPpnO4lMKnTVOYpdxqLoa0MU5ISuI4MJJ8sl3EFngDg/1fA6ScegcbfmgMw/3/cO23aWCDz2bfc1t5c1AUYBxTQ3tgmK6BwgVhL7SIODlz5pf0Emg1K57NbVuMBwQo0LBDPRZ4BwQ2/ogSpRqEemFvEWwEa0+v0Dm/k8+Of6QgmqTI09vJhqRcU/Az7fuvV/xEtHEWwnxXBIjKmAIV4Omi/z0/Hp/hpzjr7WwQ0apTYK7n83fMOxm3kxjzsJSv+eRJRQ8WtYNNOFH6GUYTMzyyZIYXbRgh+ehISnslBc1DoDHAfIgxRBJb02BvGR831P1waTXq0fHOwEX8fLa6ubEfM16Wjfe2u9zcTHngXVlZ3+v1o/P34he2Isn60F+OXd+oX52gSHgjpEezXHM4l318Y+RD5+qPnMfVxx/U7Xna87W/QuS/OtYOMoUtkp7aT8On3JR+fPZ+eYWZynryYQYXLue/ugfL1ieVLU1Oxm1oPLXemX/NUQVdz85pFDzQgpxyQQ9K/pT7nh9TyO17jaCG7tD1q9X9wSwE//tiy9cU6/jsVgAUvXwCsKbkIGaqSVlJ+6qz0AqMJzdjES0/T7ds+yj5wOaFR3wpng4EKskZD6IKfgkqLWag12oBmk8oXt+hB+InShAmTFoROZ5C0+w5Zp/fogv8KlX7/oNYZftDsXvSs2WIkxNAdghiKvLCzF4os1jhioqGq1IV4U2FIXSQZdYgYYgg6rPZ2qhxpiOwxwejinZRykCNYhWXWYUhRMNQJlhBLrQKlepbNxg3dycpiFYTaQSAMCvGCOvWCRCxMw/HGVGjn8S4Iz6RgkImqGXcdhDCIrUMOVnYAulyugare5RhDF54TRXEgDoGpoDLLiig4jkH6cC8JwqKshBVRXRabU4+Dyq3nK9V33ATN0NuqSJGjRBW1jpcmlkRGo9jMYLHeG/UCm01lcFScGW4IjMb7OgAAAAA=') format('woff2'),
+  url('https://at.alicdn.com/t/font_1801862_flkfq07f4uk.woff?t=1589961379228') format('woff'),
+  url('https://at.alicdn.com/t/font_1801862_flkfq07f4uk.ttf?t=1589961379228') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('https://at.alicdn.com/t/font_1801862_flkfq07f4uk.svg?t=1589961379228#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-zuojiantou-copy:before {
+  content: "\e653";
+}
+
+.icon-youjiantou-copy:before {
+  content: "\e654";
+}
+
+.icon-jiantou9:before {
+  content: "\e60b";
+}
+
+.icon-shangjiantou:before {
+  content: "\e63a";
+}
+

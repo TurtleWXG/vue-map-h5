@@ -1,28 +1,45 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <div id="container"></div>
+    <map-detail></map-detail>
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
-
+import AMap from 'AMap'
+import MapDetail from '@/components/MapDetail/MapDetail'
 export default {
-  name: "App",
+  name: 'App',
+  mounted() {
+    this.init()
+  },
+  methods: {
+    init() {
+      const MAP = new AMap.Map('container', {
+        center: [116.397428, 39.90923],
+        resizeEnable: true,
+        zoom: 10
+      })
+      const Marker = new AMap.Marker({
+        position: new AMap.LngLat(116.397428, 39.90923),
+        title: '北京'
+      })
+      MAP.add(Marker)
+    }
+  },
   components: {
-    HelloWorld
+    MapDetail
   }
-};
+}
 </script>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+* {
+  margin: 0;
+  padding: 0;
+}
+#container {
+  width: 750px;
+  height: 100vh;
 }
 </style>
