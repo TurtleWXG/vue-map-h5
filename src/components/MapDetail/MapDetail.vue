@@ -73,12 +73,12 @@
         <div class="view-item">
           <div class="view-title">社区信息</div>
           <div class="view-list">
-            <block v-for="item in policeList" :key="item.id">
+            <div v-for="item in policeList" :key="item.id">
               <div class="list-item">
                 <div class="item-title">社区民警</div>
                 <div class="item-content">{{ (item.name + ' -- ' + item.mobilePhone) | isNull }}</div>
               </div>
-            </block>
+            </div>
             <div class="list-item">
               <div class="item-title">派出所名称</div>
               <div class="item-content">{{ policeStation.policeStation | isNull }}</div>
@@ -87,12 +87,12 @@
               <div class="item-title">派出所地址</div>
               <div class="item-content">{{ policeStation.address | isNull }}</div>
             </div>
-            <block v-for="item in policeStation.policeStationHotlineList" :key="item.number">
+            <div v-for="item in policeStation.policeStationHotlineList" :key="item.number">
               <div class="list-item">
                 <div class="item-title">派出所电话</div>
                 <div class="item-content">{{ item.phoneNumber | isNull }}</div>
               </div>
-            </block>
+            </div>
             <div class="list-item">
               <div class="item-title">孙河地区热线(24小时)</div>
               <div class="item-content">13231341221</div>
@@ -115,15 +115,10 @@
             </div>
           </div>
         </div>
-        <div class="view-item" v-if="checkinList.length !== 0">
-          <div class="view-title">居住人员</div>
-          <div class="view-list">
-            <block v-for="(item, index) in checkinList" :key="index">
-              <div class="list-item">
-                <div class="item-title">人员信息</div>
-                <div class="item-content">{{ (item.name + ' -- ' + item.phone) | isNull }}</div>
-              </div>
-            </block>
+        <div class="view-item">
+          <div class="img-box">
+            <img src="../../../public/qrcode.jpg" width="100%" />
+            <p>长按二维码进入小程序</p>
           </div>
         </div>
       </div>
@@ -132,6 +127,7 @@
 </template>
 
 <script>
+import { loadHouseRoomDetailQrcode } from '@/api/house/house'
 import {
   nationalityDict,
   provinceListDict,
@@ -159,6 +155,11 @@ import {
 const IMGbaseURL = process.env.VUE_APP_mapIconUrl
 export default {
   name: 'MapDetail',
+  props: {
+    detailData: {
+      type: Object
+    }
+  },
   data() {
     return {
       houseEquityDict,
@@ -208,7 +209,8 @@ export default {
         }
       ],
       longitude: 0,
-      latitude: 0
+      latitude: 0,
+      qrcodeId: ''
     }
   },
   computed: {
@@ -220,7 +222,32 @@ export default {
       }
     }
   },
+  watch: {
+    detailData(val) {
+      this.$nextTick(() => {
+        this.house = val.house
+        this.trouble = val.house.houseRoomInfo.trouble
+        this.houseRoomInfo = val.house.houseRoomInfo
+        this.list = val.house.houseRoomInfo
+        this.policeList = val.policeList
+        this.policeStation = val.policeStation
+      })
+    }
+  },
   methods: {
+    async loadData() {
+      const res = await loadHouseRoomDetailQrcode({ qrcodeId: this.qrcodeId })
+      if (res.code === 200) {
+        this.house = res.data.house
+        this.trouble = res.data.house.houseRoomInfo.trouble
+        this.houseRoomInfo = res.data.house.houseRoomInfo
+        this.list = res.data.house.houseRoomInfo
+        this.policeList = res.data.policeList
+        this.policeStation = res.data.policeStation
+      } else {
+        this.showTips(res.msg)
+      }
+    },
     hasLength(obj) {
       const length = Object.keys(obj)
       return length.length === 0 ? false : true
@@ -238,7 +265,12 @@ export default {
     }
   },
   mounted() {
+    // console.log(this.detailData)
+    // const param = window.location.search.substring(1)
+    // this.qrcodeId = param.split('=')[1]
+    // console.log(this.qrcodeId)
     this.getWindowHeight()
+    // this.loadData()
     // if (options.data) {
     //   this.list = { ...JSON.parse(options.data) }
     //   this.house = this.list.house ? this.list.house : {}
@@ -283,7 +315,20 @@ export default {
     }
     .scroll-view {
       flex: 1;
-      overflow: hidden;
+      overflow: auto;
+      .img-box{
+        width: 450px;
+        height: 450px;
+        margin: 0 auto;
+        padding: 100px 0 50px;
+        img {
+          width: 100%;
+          height: 100%;
+        }
+        p {
+          text-align: center;
+        }
+      }
     }
   }
 }
