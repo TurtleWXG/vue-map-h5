@@ -218,7 +218,7 @@ export default {
       if (this.show) {
         return this.WindowHeight - 40 + 'px'
       } else {
-        return this.WindowHeight / 4 + 'px'
+        return this.WindowHeight / 1.7 + 'px'
       }
     }
   },
@@ -316,7 +316,7 @@ export default {
     .scroll-view {
       flex: 1;
       overflow: auto;
-      .img-box{
+      .img-box {
         width: 450px;
         height: 450px;
         margin: 0 auto;

@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div id="container"></div>
-    <map-detail :detailData="detailData"></map-detail>
+    <map-detail class="abc" :detailData="detailData"></map-detail>
   </div>
 </template>
 
@@ -23,7 +23,7 @@ export default {
     this.loadData()
   },
   methods: {
-    init(lng=116.397428, lat=39.90923) {
+    init(lng = 116.397428, lat = 39.90923) {
       const MAP = new AMap.Map('container', {
         center: [lng, lat],
         resizeEnable: true,
@@ -47,7 +47,8 @@ export default {
           this.init()
         }
       } else {
-        this.showTips(res.msg)
+        console.error(res.msg || '请求出错!')
+        // this.showTips(res.msg)
       }
     }
   },
@@ -62,8 +63,18 @@ export default {
   margin: 0;
   padding: 0;
 }
-#container {
+#app {
   width: 750px;
   height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+#container {
+  width: 100%;
+  height: 50vh;
+}
+.abc {
+  flex: 1;
 }
 </style>
