@@ -28,7 +28,7 @@
               <div class="item-title">房屋用途</div>
               <div class="item-content">{{ houseRoomInfo.houseUsed | fmtDict(houseUsedDict) }}</div>
             </div>
-            <div class="list-item">
+            <!-- <div class="list-item">
               <div class="item-title">房屋类型</div>
               <div class="item-content">{{ houseRoomInfo.houseType | fmtDict(houseTypeDict) }}</div>
             </div>
@@ -43,8 +43,8 @@
             <div class="list-item">
               <div class="item-title">管理类型</div>
               <div class="item-content">{{ houseRoomInfo.manageType | fmtDict(manageTypeDict) }}</div>
-            </div>
-            <template v-if="houseRoomInfo.isDanger && houseRoomInfo.isDanger === '1'">
+            </div> -->
+            <!-- <template v-if="houseRoomInfo.isDanger && houseRoomInfo.isDanger === '1'">
               <div class="list-item">
                 <div class="item-title">治安隐患</div>
                 <div class="item-content">{{ trouble.securityTrouble | fmtCheckBoxDict(securityTroubleDict) }}</div>
@@ -63,11 +63,11 @@
                 <div class="item-title">群租及其他</div>
                 <div class="item-content">{{ trouble.otherTrouble | fmtCheckBoxDict(otherTroubleDict) }}</div>
               </div>
-            </template>
-            <div class="list-item">
+            </template> -->
+            <!-- <div class="list-item">
               <div class="item-title">房屋产权类型</div>
               <div class="item-content">{{ list.propertyType | fmtDict(houseEquityDict) }}</div>
-            </div>
+            </div> -->
           </div>
         </div>
         <div class="view-item">

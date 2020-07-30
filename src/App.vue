@@ -23,13 +23,13 @@ export default {
     this.loadData()
   },
   methods: {
-    init(lng = 116.397428, lat = 39.90923) {
+    init(lng = 116.542582, lat = 40.035219) {
       const MAP = new AMap.Map('container', {
         center: [lng, lat],
         resizeEnable: true,
         zoom: 15
       })
-      if (lng !== 116.397428) {
+      if (lng !== 116.542582) {
         const Marker = new AMap.Marker({
           position: new AMap.LngLat(lng, lat),
           title: '北京'
