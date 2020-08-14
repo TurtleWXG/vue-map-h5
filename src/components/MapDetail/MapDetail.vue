@@ -14,7 +14,9 @@
       </div>
       <div class="scroll-view">
         <div class="view-item">
-          <div class="view-title">房屋信息</div>
+          <div class="view-title">
+            房屋信息
+          </div>
           <div class="view-list">
             <div class="list-item">
               <div class="item-title">房屋地区</div>
@@ -71,7 +73,9 @@
           </div>
         </div>
         <div class="view-item">
-          <div class="view-title">社区信息</div>
+          <div class="view-title">
+            社区信息<button @click="$router.push({ path: 'bar', query: { code: house.communityCode } })">周边</button>
+          </div>
           <div class="view-list">
             <div v-for="item in policeList" :key="item.id">
               <div class="list-item">
@@ -303,6 +307,44 @@ export default {
     flex-direction: column;
     background-color: #c0c0c0;
     border-radius: 20px 20px 0 0;
+    button {
+      float: right;
+      color: #fff;
+      background-color: #1890ff;
+      border-color: #1890ff;
+      text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12);
+      box-shadow: 0 2px 0 rgba(0, 0, 0, 0.045);
+      line-height: 1;
+      position: relative;
+      display: block;
+      font-weight: 400;
+      white-space: nowrap;
+      text-align: center;
+      background-image: none;
+      user-select: none;
+      touch-action: manipulation;
+      height: 50px;
+      padding: 0 20px;
+      font-size: 14px;
+      border-radius: 10px;
+      border: 1px solid #d9d9d9;
+      &:before {
+        box-sizing: border-box;
+        position: absolute;
+        top: -1px;
+        right: -1px;
+        bottom: -1px;
+        left: -1px;
+        z-index: 1;
+        display: none;
+        background: #fff;
+        border-radius: inherit;
+        opacity: 0.35;
+        transition: opacity 0.2s;
+        content: '';
+        pointer-events: none;
+      }
+    }
     .icon-box {
       height: 70rpx;
       background-color: #fff;

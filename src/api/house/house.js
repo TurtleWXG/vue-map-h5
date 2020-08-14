@@ -9,3 +9,12 @@ export function loadHouseRoomDetailQrcode(param) {
     params: param
   })
 }
+
+// 获取周边
+export function getInnerUnit(param) {
+  return axios.request({
+    url: '/unit/important/getInnerUnit',
+    method: 'GET',
+    params: param
+  })
+}
