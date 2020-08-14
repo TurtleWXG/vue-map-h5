@@ -4,5 +4,5 @@ module.exports = {
       AMap: 'AMap' // 高德地图配置
     }
   },
-  publicPath: './'
+  publicPath: '/sunhe-qrcode/'
 }

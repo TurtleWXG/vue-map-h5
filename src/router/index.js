@@ -10,6 +10,7 @@ const routes = [
 ]
 
 export default new Router({
+  base: "/sunhe-qrcode/",
   mode: 'history',
   routes
 })
