@@ -1,6 +1,6 @@
 // import Vue from 'vue'
 import axios from 'axios'
-const baseURL = 'https://www.xbwisdom.com/pure-admin'
+const baseURL = 'https://www.bjcyshx.cn/admin'
 // const baseURL = 'http://192.168.18.122:8902/'
 // 创建 axios 实例
 const service = axios.create({
