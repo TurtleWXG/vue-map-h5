@@ -26,11 +26,12 @@
               <div class="item-title">房屋地址</div>
               <div class="item-content">{{ (house.communityName + house.houseNumber + house.room) | isNull }}</div>
             </div>
+            <!--
             <div class="list-item">
               <div class="item-title">房屋用途</div>
               <div class="item-content">{{ houseRoomInfo.houseUsed | fmtDict(houseUsedDict) }}</div>
             </div>
-            <!-- <div class="list-item">
+            <div class="list-item">
               <div class="item-title">房屋类型</div>
               <div class="item-content">{{ houseRoomInfo.houseType | fmtDict(houseTypeDict) }}</div>
             </div>
@@ -45,7 +46,8 @@
             <div class="list-item">
               <div class="item-title">管理类型</div>
               <div class="item-content">{{ houseRoomInfo.manageType | fmtDict(manageTypeDict) }}</div>
-            </div> -->
+            </div>
+            -->
             <!-- <template v-if="houseRoomInfo.isDanger && houseRoomInfo.isDanger === '1'">
               <div class="list-item">
                 <div class="item-title">治安隐患</div>
