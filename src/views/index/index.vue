@@ -39,6 +39,7 @@ export default {
     },
     async loadData() {
       const res = await loadHouseRoomDetailQrcode({ qrcodeId: this.qrcodeId })
+      // const res = await loadHouseRoomDetailQrcode({ qrcodeId: '1547bbc3fdd27706651b8b956f14c04e7c5629f3' })
       if (res.code === 200) {
         this.detailData = res.data
         if (res.data.house.lng) {

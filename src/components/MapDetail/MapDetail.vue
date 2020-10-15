@@ -101,23 +101,23 @@
             </div>
             <div class="list-item">
               <div class="item-title">孙河地区热线(24小时)</div>
-              <div class="item-content">13231341221</div>
+              <div class="item-content">{{ communityInfo.hotline }}</div>
             </div>
             <div class="list-item">
               <div class="item-title">孙河社区卫生服务中心</div>
-              <div class="item-content">010-87544123</div>
+              <div class="item-content">{{ communityInfo.healthServiceCenter || '--' }}</div>
             </div>
             <div class="list-item">
-              <div class="item-title">康营家园三社区居委会</div>
-              <div class="item-content">010-87544123</div>
+              <div class="item-title">{{ (house.communityName || '' ) + '居委会'}}</div>
+              <div class="item-content">{{ communityInfo.healthServiceCenter }}</div>
             </div>
             <div class="list-item">
-              <div class="item-title">三社区流管所</div>
-              <div class="item-content">010-87544123</div>
+              <div class="item-title">{{ (house.communityName || '' ) + '流管所' }}</div>
+              <div class="item-content">{{ communityInfo.flowManagerStation || '--' }}</div>
             </div>
             <div class="list-item">
-              <div class="item-title">孙河物业(二、三社区)</div>
-              <div class="item-content">010-87544123</div>
+              <div class="item-title">{{ (house.communityName || '' ) + '物业' }}</div>
+              <div class="item-content">{{ communityInfo.propertyCompany || '--' }}</div>
             </div>
           </div>
         </div>
@@ -198,7 +198,7 @@ export default {
       houseRoomInfo: {}, // 房屋详细信息列表
       trouble: {}, // 房屋隐患信息列表
       checkinList: [], // 房屋隐患信息列表
-
+      communityInfo: {}, // 社区信息 
       show: false,
 
       WindowHeight: 0,
@@ -237,12 +237,14 @@ export default {
         this.list = val.house.houseRoomInfo
         this.policeList = val.policeList
         this.policeStation = val.policeStation
+        this.communityInfo = val.communityInfo
       })
     }
   },
   methods: {
     async loadData() {
       const res = await loadHouseRoomDetailQrcode({ qrcodeId: this.qrcodeId })
+      // const res = await loadHouseRoomDetailQrcode({ qrcodeId: '1547bbc3fdd27706651b8b956f14c04e7c5629f3' })
       if (res.code === 200) {
         this.house = res.data.house
         this.trouble = res.data.house.houseRoomInfo.trouble
@@ -250,6 +252,7 @@ export default {
         this.list = res.data.house.houseRoomInfo
         this.policeList = res.data.policeList
         this.policeStation = res.data.policeStation
+        this.communityInfo = res.data.communityInfo
       } else {
         this.showTips(res.msg)
       }
