@@ -24,7 +24,11 @@
             </div>
             <div class="list-item">
               <div class="item-title">房屋地址</div>
-              <div class="item-content">{{ (house.communityName + house.houseNumber + house.room) | isNull }}</div>
+              <div class="item-content">{{ (house.communityName + house.houseNumber) | isNull }}</div>
+            </div>
+            <div class="list-item">
+              <div class="item-title">套间数量</div>
+              <div class="item-content">{{ house.houseRoomNum | isNull }}</div>
             </div>
             <!--
             <div class="list-item">
